@@ -1,0 +1,11 @@
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Entities\obj\Debug\TelephoneDirectory.Entities.csprojResolveAssemblyReference.cache
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Entities\obj\Debug\TelephoneDirectory.Entities.csproj.CoreCompileInputs.cache
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Entities\bin\Debug\TelephoneDirectory.Entities.dll.config
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Entities\bin\Debug\TelephoneDirectory.Entities.dll
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Entities\bin\Debug\TelephoneDirectory.Entities.pdb
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Entities\bin\Debug\EntityFramework.dll
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Entities\bin\Debug\EntityFramework.xml
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Entities\obj\Debug\TelephoneDirectory.Entities.dll
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Entities\obj\Debug\TelephoneDirectory.Entities.pdb

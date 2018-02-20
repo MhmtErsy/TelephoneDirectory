@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TelephoneDirectory.Entities.Department>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List Department</title>
+</head>
+<body>
+    <p>
+        @Bootstrap.LinkButton("/Home/AddDepartment/", "success", "btn-md", "Create New Department", "plus", " Create New Department")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayName("Operations")
+            </th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Bootstrap.LinkButton("/Home/EditDepartment/"+item.DepartmentId, "warning", "btn-xs", "Edit Department", "wrench", " Edit") |
+                @Bootstrap.LinkButton("/Home/DepartmentDetail/" + item.DepartmentId, "info", "btn-xs", "Department Details", "leaf", " Details") |
+                @Bootstrap.LinkButton("/Home/DeleteDepartment/" + item.DepartmentId, "danger", "btn-xs", "Delete Department", "trash", " Delete")
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

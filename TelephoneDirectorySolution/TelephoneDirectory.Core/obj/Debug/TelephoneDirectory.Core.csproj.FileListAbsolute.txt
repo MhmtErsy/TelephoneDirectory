@@ -1,0 +1,6 @@
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Core\bin\Debug\TelephoneDirectory.Core.dll
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Core\bin\Debug\TelephoneDirectory.Core.pdb
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Core\obj\Debug\TelephoneDirectory.Core.csprojResolveAssemblyReference.cache
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Core\obj\Debug\TelephoneDirectory.Core.csproj.CoreCompileInputs.cache
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Core\obj\Debug\TelephoneDirectory.Core.dll
+C:\Users\mehme\source\repos\TelephoneDirectorySolution\TelephoneDirectory.Core\obj\Debug\TelephoneDirectory.Core.pdb

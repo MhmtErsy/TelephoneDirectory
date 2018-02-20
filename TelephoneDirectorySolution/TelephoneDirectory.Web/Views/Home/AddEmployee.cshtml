@@ -1,0 +1,103 @@
+﻿@model TelephoneDirectory.Web.ViewModels.AddEmployeViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+<script src="~/Scripts/validator.min.js"></script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add Employee</title>
+
+</head>
+<body>
+    @using (Html.BeginForm()) 
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            <h4>Employee</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Surname, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.Surname, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Surname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2"})
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", @id = "phoneInput" } })
+                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                    <div class="alert alert-warning" id="phoneInputControl">
+                        <strong>Warning!</strong> Please enter a valid phone number. For Example:( 05443332211 )
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DepartmentId, "Departman", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.DropDownList("DepartmentId", null, "- None -", htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DirectorId, "Yönetici", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.DropDownList("DirectorId", null,"- None -", htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" id="btnCreate" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    }
+    
+    <div>
+        @Bootstrap.LinkButton("/Home/ListEmployee/", "info", "btn-md", "Edit Department", "arrow-left", " Back to Employee List")
+
+
+    </div>
+    <script>
+        $(function () {
+            $("#phoneInputControl").hide();
+            $("#phoneInput").on("keyup", function () {
+                //alert("burdayım");
+                if (validator.isMobilePhone($("#phoneInput").val(), "tr-TR")) {
+                    $("#phoneInputControl").hide();
+                    $("#btnCreate").removeAttr("disabled");
+                }
+                else {
+                    $("#phoneInputControl").show();
+                    $("#btnCreate").attr("disabled", "disabled");
+                }
+            });
+            
+                
+        });
+    </script>
+</body>
+</html>

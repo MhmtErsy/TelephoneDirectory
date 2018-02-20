@@ -1,0 +1,60 @@
+﻿@using TelephoneDirectory.Entities.Messages
+@using TelephoneDirectory.Web.ViewModels
+@model ErrorViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = Model.Title;
+}
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet'
+      type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,800'
+      rel='stylesheet' type='text/css' />
+<!-- ============ Add custom CSS here ============ -->
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/style.css" rel="stylesheet" />
+<link href="~/Content/font-awesome.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+<style>
+    .body {
+        background: url(/Images/msj-bg.jpg) no-repeat center center fixed
+    }
+</style>
+<div class="container">
+    <div class="text-center">
+        <div id="banner" style="background-image:none;">
+            <div class="text-danger">
+                <h1>
+                    <span class="glyphicon glyphicon-remove-circle"></span><strong>@Model.Title</strong><br />
+                    @Model.Header
+                </h1>
+            </div>
+            <h1>
+                @foreach(ErrorMessageObj msg in Model.Items)
+                {
+                    @msg.Message<br>
+                }
+            </h1>
+            <h5><strong><span class="glyphicon glyphicon-phone-alt"></span> Telephone Directory</strong></h5><br />
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<script src="~/Scripts/jquery.backstretch.js"></script>
+<script src="~/Scripts/afterlogout_navs.js"></script>
+@{
+    string js = string.Empty;
+    if (Model.IsRedirecting)
+    {
+        js = "setTimeout(function () { window.location = '" + Model.RedirectingUrl + "';  }," + Model.RedirectingTimeout + ");";
+    }
+}
+<script type="text/javascript">
+    $(function () {
+
+        @Html.Raw(js)
+    });
+</script>
+
+

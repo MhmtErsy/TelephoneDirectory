@@ -1,0 +1,77 @@
+﻿@model TelephoneDirectory.Entities.Employee
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EmployeeDetails</title>
+</head>
+<body>
+    <div>
+        <h4>Employee</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Surname)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Surname)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Deparment")
+            </dt>
+
+            <dd>
+                @if (Model.Departman != null)
+                {
+                    @Html.DisplayName(Model.Departman.Title)
+                }
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Director")
+            </dt>
+
+            <dd>
+                @if (Model.Director != null)
+                {
+                    @Html.DisplayName(Model.Director.Name + " " + Model.Director.Surname)
+                }
+                
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @if (Session["login"]!=null)
+        {
+            @Bootstrap.LinkButton("/Home/EditEmployee/" + Model.EmployeeID, "warning", "btn-md", "Edit Employee", "wrench", " Edit")
+            @Bootstrap.LinkButton("/Home/DeleteEmployee/" + Model.EmployeeID, "danger", "btn-md", "Delete Employee", "trash", " Delete")
+        }
+        @Bootstrap.LinkButton("/Home/ListEmployee/", "info", "btn-md", "Edit Employee", "arrow-left", " Back Employee List")
+    </p>
+</body>
+</html>

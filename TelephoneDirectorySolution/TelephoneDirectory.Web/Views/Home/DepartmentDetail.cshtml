@@ -1,0 +1,56 @@
+﻿@model TelephoneDirectory.Web.ViewModels.DepartmentViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DepartmentDetail</title>
+</head>
+<body>
+    <div>
+        <h3>@Model.Department.Title Department</h3>
+
+        <hr />
+        <h4>Employees</h4>
+        <table class="table table-condensed">
+            <tr>
+                <th>
+                    @Html.DisplayName("Name")
+                </th>
+                <th>
+                    @Html.DisplayName("Phone Number")
+                </th>
+                <th>
+                    @Html.DisplayName("Director")
+                </th>
+
+            </tr>
+            @foreach (var item in Model.DepartmentEmployees)
+            {
+                <tr>
+                    <td>@Html.DisplayName(item.Name + " " + item.Surname)</td>
+                    <td>@Html.DisplayName(item.PhoneNumber)</td>
+                    @if (item.Director != null)
+                    {
+                        <td>@Html.DisplayName(item.Director.Name + " " + item.Director.Surname)</td>
+                    }
+                    else
+                    {
+                        <td>@Html.DisplayName("- None -")</td>
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+    <p>
+        @Bootstrap.LinkButton("/Home/EditDepartment/" + Model.Department.DepartmentId, "warning", "btn-md", "Edit Department", "wrench", " Edit") |
+        @Bootstrap.LinkButton("/Home/ListDepartment/", "info", "btn-md", "Edit Department", "arrow-left", " Back to Department List") |
+        @Bootstrap.LinkButton("/Home/DeleteDepartment/" + Model.Department.DepartmentId, "danger", "btn-md", "Delete Department", "trash", " Delete")
+    </p>
+</body>
+</html>
