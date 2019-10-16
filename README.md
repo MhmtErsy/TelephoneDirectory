@@ -1,4 +1,4 @@
-# Telephone Rehberi
+# Telefon Rehberi
 
 ## Kapsam
 __Sistem iki farklı arayüze sahip olacaktır.__
